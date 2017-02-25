@@ -1,4 +1,4 @@
-var Member = require('../models/Member')
+var Message = require('../models/Message')
 var Promise = require('bluebird')
 
 module.exports = {
@@ -6,12 +6,12 @@ module.exports = {
 	get: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Member.find(params, function(err, members){
+			Message.find(params, function(err, messages){
 				if(err){
 					reject(err)
 				}
 
-				resolve(members)
+				resolve(messages)
 			})
 		})
 	},
@@ -19,12 +19,12 @@ module.exports = {
 	getById: function(id, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Member.findById(id, function(err, member){
+			Message.findById(id, function(err, message){
 				if(err){
 					reject(err)
 				}
 
-				resolve(member)
+				resolve(message)
 			})
 		})
 	},
@@ -32,12 +32,12 @@ module.exports = {
 	post: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Member.create(params, function(err, member){
+			Message.create(params, function(err, message){
 				if(err){
 					reject(err)
 				}
 
-				resolve(member)
+				resolve(message)
 			})
 		})
 	},
@@ -45,12 +45,12 @@ module.exports = {
 	put: function(id, params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Member.indByIdAndUpdate(id, params, function(err, member){
+			Message.findByIdAndUpdate(id, params, function(err, message){
 				if(err){
 					reject(err)
 				}
 
-				resolve(member)
+				resolve(message)
 			})
 		})
 	},

@@ -1,12 +1,20 @@
 var CustomerController = require('./CustomerController')
 var FeedController = require('./FeedController')
-var MemberController = require('./MemberController')
-var TeamController = require('./TeamController')
+var GroupController = require('./GroupController')
+var MessageController = require('./MessageController')
+var ProviderController = require('./ProviderController')
+var ScheduleController = require('./ScheduleController')
+var TransactionController = require('./TransactionController')
+var UserController = require('./UserController')
 
 module.exports = {
 	
 	customer: CustomerController,
 	feed: FeedController,
-	member: MemberController,
-	team: TeamController
+	group: GroupController,
+	message: MessageController,
+	provider: ProviderController,
+	schedule: ScheduleController,
+	transaction: TransactionController,
+	user: UserController,
 }

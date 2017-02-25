@@ -1,4 +1,4 @@
-var Customer = require('../models/Customer')
+var Provider = require('../models/Provider')
 var Promise = require('bluebird')
 
 module.exports = {
@@ -6,12 +6,12 @@ module.exports = {
 	get: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.find(params, function(err, customers){
+			Provider.find(params, function(err, providers){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customers)
+				resolve(providers)
 			})
 		})
 	},
@@ -19,12 +19,12 @@ module.exports = {
 	getById: function(id, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.findById(id, function(err, customer){
+			Provider.findById(id, function(err, provider){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customer)
+				resolve(provider)
 			})
 		})
 	},
@@ -32,12 +32,12 @@ module.exports = {
 	post: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.create(params, function(err, customer){
+			Provider.create(params, function(err, provider){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customer)
+				resolve(provider)
 			})
 		})
 	},
@@ -45,12 +45,12 @@ module.exports = {
 	put: function(id, params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.findByIdAndUpdate(id, params, function(err, customer){
+			Provider.findByIdAndUpdate(id, params, function(err, provider){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customer)
+				resolve(provider)
 			})
 		})
 	},

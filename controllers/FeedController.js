@@ -45,7 +45,7 @@ module.exports = {
 	put: function(id, params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Feed.indByIdAndUpdate(id, params, function(err, feed){
+			Feed.findByIdAndUpdate(id, params, function(err, feed){
 				if(err){
 					reject(err)
 				}

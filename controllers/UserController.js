@@ -1,4 +1,4 @@
-var Customer = require('../models/Customer')
+var User = require('../models/User')
 var Promise = require('bluebird')
 
 module.exports = {
@@ -6,12 +6,12 @@ module.exports = {
 	get: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.find(params, function(err, customers){
+			User.find(params, function(err, users){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customers)
+				resolve(users)
 			})
 		})
 	},
@@ -19,12 +19,12 @@ module.exports = {
 	getById: function(id, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.findById(id, function(err, customer){
+			User.findById(id, function(err, user){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customer)
+				resolve(user)
 			})
 		})
 	},
@@ -32,12 +32,12 @@ module.exports = {
 	post: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.create(params, function(err, customer){
+			User.create(params, function(err, user){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customer)
+				resolve(user)
 			})
 		})
 	},
@@ -45,12 +45,12 @@ module.exports = {
 	put: function(id, params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Customer.findByIdAndUpdate(id, params, function(err, customer){
+			User.findByIdAndUpdate(id, params, function(err, user){
 				if(err){
 					reject(err)
 				}
 
-				resolve(customer)
+				resolve(user)
 			})
 		})
 	},

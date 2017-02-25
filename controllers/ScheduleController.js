@@ -1,4 +1,4 @@
-var Team = require('../models/Team')
+var Schedule = require('../models/Schedule')
 var Promise = require('bluebird')
 
 module.exports = {
@@ -6,12 +6,12 @@ module.exports = {
 	get: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Team.find(params, function(err, teams){
+			Schedule.find(params, function(err, schedules){
 				if(err){
 					reject(err)
 				}
 
-				resolve(teams)
+				resolve(schedules)
 			})
 		})
 	},
@@ -19,12 +19,12 @@ module.exports = {
 	getById: function(id, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Team.findById(id, function(err, team){
+			Schedule.findById(id, function(err, schedule){
 				if(err){
 					reject(err)
 				}
 
-				resolve(team)
+				resolve(schedule)
 			})
 		})
 	},
@@ -32,12 +32,12 @@ module.exports = {
 	post: function(params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Team.create(params, function(err, team){
+			Schedule.create(params, function(err, schedule){
 				if(err){
 					reject(err)
 				}
 
-				resolve(team)
+				resolve(schedule)
 			})
 		})
 	},
@@ -45,12 +45,12 @@ module.exports = {
 	put: function(id, params, isRaw){
 		return new Promise(function(resolve, reject){
 
-			Team.indByIdAndUpdate(id, params, function(err, team){
+			Schedule.findByIdAndUpdate(id, params, function(err, schedule){
 				if(err){
 					reject(err)
 				}
 
-				resolve(team)
+				resolve(schedule)
 			})
 		})
 	},
