@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+  	
+  	<div>
+  		<form action="/api/team" method="post">
+			<h4>Create Team</h4>
+  			<input type="text" name="name" placeholder="name"/><br />	
+  			<input type="text" name="category" placeholder="category"/><br />	
+  			<input type="submit" value="Submit" />	
+  		</form>
+  	</div>
+    </body>
+</html>
+
